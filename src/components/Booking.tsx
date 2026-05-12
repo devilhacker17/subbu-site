@@ -16,11 +16,12 @@ const Booking = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const text = `Hello Amutha! I would like to book an appointment.%0A%0A*Name:* ${formData.name}%0A*Mobile:* ${formData.mobile}%0A*Place:* ${formData.place}%0A*Date:* ${formData.date}`;
+    const text = `Hello Amutha! I would like to book an appointment.\n\n*Name:* ${formData.name}\n*Mobile:* ${formData.mobile}\n*Place:* ${formData.place}\n*Date:* ${formData.date}`;
+    const encodedText = encodeURIComponent(text);
     const whatsappNumber = "919080986643";
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
 
-    window.open(whatsappUrl, '_blank');
+    window.location.href = whatsappUrl;
   };
 
   return (

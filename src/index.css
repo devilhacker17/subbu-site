@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark: #0D0B0C;
+  --color-brand-dark-light: #1F1A1B;
+  --color-brand-rose: #B88A7A;
+  --color-brand-nude: #E7C1B2;
+  --color-brand-white: #F7F3F1;
+  
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Montserrat", sans-serif;
+  --font-script: "Great Vibes", cursive;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-brand-dark text-brand-white font-body antialiased selection:bg-brand-rose selection:text-brand-white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-brand-rose;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(184, 138, 122, 0.3);
+  }
+}
